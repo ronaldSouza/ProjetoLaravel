@@ -8,7 +8,8 @@
 </head>
 <body>
     <div class="container">
-        Projeto Laravel Pagina 1
+        <h1>Projeto Laravel Pagina {{$numero}}</h1>
+        <a href="{{ route('inicio') }}">Pagina inicial</a>
     </div>
 </body>
 </html>

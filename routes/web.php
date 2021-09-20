@@ -15,4 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+})->name('inicio');
+
+Route::get ('/home/{numero?}', function ($numero = null) {
+    if ($numero) {
+        return view('home', [
+            'numero' => $numero,
+        ]);
+    }else {
+        return "<h1>Pagina não encontrada!</h1>";
+    }
+    
 });
+
