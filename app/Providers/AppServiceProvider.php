@@ -27,8 +27,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Gate::define('show-formula', function (User $user, Formulas $formulas) {
-            return $user->id === $formulas->user_id;
-        });
+        // Gate::define('show-formula', function (User $user, Formulas $formulas) {
+        //     return $user->id === $formulas->user_id;
+        // });
+        Schema::defaultStringLength(191);
     }
 }

@@ -42,7 +42,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function formulas() {
-        return $this->hasMany(Formula::class, 'user_id', 'id');
-    }
+    // public function formulas() {
+    //     return $this->hasMany(Formulas::class, 'user_id', 'id');
+    // }
 }
