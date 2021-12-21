@@ -1,6 +1,8 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\FormulasController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,18 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+
 Route::get('/', function () {
-    return view('welcome');
-})->name('inicio');
+    return view('auth.login');
+})->name('auth.login');
 
-Route::get ('/home/{numero?}', function ($numero = null) {
-    if ($numero) {
-        return view('home', [
-            'numero' => $numero,
-        ]);
-    }else {
-        return "<h1>Pagina não encontrada!</h1>";
-    }
-    
-});
+Route::get('/formulas/lista', [FormulasController::class, 'list'])->name('formulas.list');
 
+Route::resource('formulas', FormulasController::class);
+
+
+require __DIR__.'/auth.php';
