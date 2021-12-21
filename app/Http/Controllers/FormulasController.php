@@ -37,7 +37,7 @@ class FormulasController extends Controller
             'materia' => 'required',
             'nome' => 'required',
             'formula' => 'required',
-            ''
+
 
         ]);
 
@@ -45,6 +45,7 @@ class FormulasController extends Controller
         $formulas->nome = $request->post('nome');
         $formulas->materia = $request->post('materia');
         $formulas->formula = $request->post('formula');
+        $formulas->user_id = Auth::user()->id;
 
 
         $formulas->save();
@@ -71,9 +72,11 @@ class FormulasController extends Controller
     }
 
     public function list() {
-        $id = Auth::id();
+        $user_id = Auth::user()->id;
 
-        $lista = Formulas::where('id', $id);
+
+        $lista = Formulas::where('user_id', $user_id)->get();
+
         return view('dashboard.formulas.list', ['formulas'=>$lista]);
     }
 

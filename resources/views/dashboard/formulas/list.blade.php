@@ -2,6 +2,7 @@
 @section('conteudo-principal')
       
 <div class="container-sm">
+
     @foreach($formulas as $formula)
     
     
@@ -9,9 +10,7 @@
         <div class="card-group">
 
             <div class="col">
-            
-                
-                
+
                 <div class="card col-lg-10 bg-success" style="max-width: 15rem; ">
                     <div class="card-body">
                     <h6 class="card-title text-black-50">{{ $formula->materia }}</h6>

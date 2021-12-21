@@ -43,6 +43,6 @@ class User extends Authenticatable
     ];
 
     public function formulas() {
-        return $this->hasMany(Formula::class, 'user_id', 'id');
+        return $this->hasMany(Formulas::class, 'user_id', 'id');
     }
 }

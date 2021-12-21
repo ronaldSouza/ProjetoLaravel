@@ -30,5 +30,6 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('show-formula', function (User $user, Formulas $formulas) {
             return $user->id === $formulas->user_id;
         });
+        Schema::defaultStringLength(191);
     }
 }
