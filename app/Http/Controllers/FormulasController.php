@@ -8,7 +8,7 @@ use App\Models\Formulas;
 
 use Illuminate\Support\Facades\Auth;
 
-// use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Gate;
 
 class FormulasController extends Controller
 {
@@ -62,7 +62,7 @@ class FormulasController extends Controller
 
 
         if($formulas) {
-            // Gate::authorize('show-formula', $formulas);
+            Gate::authorize('show-formula', $formulas);
             return view('dashboard.formulas.show', ['formula'=>$formulas]);
         }
         else {
@@ -75,7 +75,7 @@ class FormulasController extends Controller
         $user_id = Auth::user()->id;
 
 
-        $lista = Formulas::where(['user_id', $user_id]);
+        $lista = Formulas::where('user_id', $user_id)->get();
 
         return view('dashboard.formulas.list', ['formulas'=>$lista]);
     }
