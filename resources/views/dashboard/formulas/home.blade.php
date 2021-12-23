@@ -21,14 +21,14 @@
                 </div>
             </div>
     
-            {{-- <div class="col">
+            <div class="col">
                 <div class="card col-lg-10 bg-success" style="width: 18rem;">
                     <div class="card-body">
                     <h5 class="card-title text-black-50">Explore novas Fórmulas</h5>
-                    <a href="{{ route('formulas.list') }}" class="btn btn-primary d-block ml-auto mr-auto">Explorar</a>
+                    <a href="{{ route('formulas.explore') }}" class="btn btn-primary d-block ml-auto mr-auto">Explorar</a>
                     </div>
                 </div>
-            </div> --}}
+            </div>
     
             <div class="col">
                 <div class="card col-lg-10 bg-success" style="width: 18rem;">

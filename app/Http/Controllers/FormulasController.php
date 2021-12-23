@@ -62,7 +62,7 @@ class FormulasController extends Controller
 
 
         if($formulas) {
-            Gate::authorize('show-formula', $formulas);
+            // Gate::authorize('show-formula', $formulas);
             return view('dashboard.formulas.show', ['formula'=>$formulas]);
         }
         else {
@@ -79,6 +79,15 @@ class FormulasController extends Controller
 
         return view('dashboard.formulas.list', ['formulas'=>$lista]);
     }
+
+    public function explore() {
+
+        $lista = Formulas::all();
+
+        return view('dashboard.formulas.explore', ['formulas'=>$lista]);
+    }
+    
+
 
     public function edit(Request $request, Formulas $formula) {
 

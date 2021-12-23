@@ -3,8 +3,6 @@
 @section('conteudo-principal')
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        {{-- <a href="" onclick=document.getElementById('delete_form').submit(); return false; class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i
-        class="fas fa-trash fa-sm text-white-50"></i> Excluir</a> --}}
         <form action="{{route('formulas.destroy', [$formula->id])}}" id="delete_form" method="POST">
             @method("DELETE")   
             @csrf 
@@ -22,7 +20,6 @@
         class="fas fa-pen fa-sm text-white-50"></i> Editar</a>
     </div>
     
-
     <div class="row">
         <div class="col">
 

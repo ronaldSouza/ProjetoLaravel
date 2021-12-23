@@ -26,6 +26,8 @@ Route::get('/', function () {
 
 Route::get('/formulas/lista', [FormulasController::class, 'list'])->name('formulas.list');
 
+Route::get('/formulas/explore', [FormulasController::class, 'explore'])->name('formulas.explore');
+
 Route::resource('formulas', FormulasController::class);
 
 
