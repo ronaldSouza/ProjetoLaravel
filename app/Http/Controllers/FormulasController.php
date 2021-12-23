@@ -102,4 +102,10 @@ class FormulasController extends Controller
 
     }
 
+    public function destroy(Request $request, $id) {
+        $formulas = Formulas::find($id);
+        $formulas->delete();
+        return redirect()->to(route('formulas.list'));
+    }
+
 }
